@@ -46,3 +46,4 @@ const [currAddress, updateCurrAddress] = useState("0x");
         </div>
     )
 }
+
