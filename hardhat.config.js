@@ -4,6 +4,7 @@ const fs = require("fs");
 // const infuraId = fs.readFileSync(".infuraid").toString().trim() || "";
 require("dotenv").config();
 
+// eslint-disable-next-line no-undef
 task("accounts", "Prints the list of accounts", async (taskArgs, hre) => {
   const accounts = await hre.ethers.getSigners();
 
@@ -19,12 +20,12 @@ module.exports = {
       chainId: 1337,
     },
     sepolia: {
-      url: process.env.REACT_APP_ALCHEMY_API_URL,
+      url: `https://eth-sepolia.g.alchemy.com/v2/${process.env.REACT_APP_ALCHEMY_API_URL}`,
       accounts: [process.env.REACT_APP_PRIVATE_KEY],
     },
   },
   solidity: {
-    version: "0.8.4",
+    version: "0.8.9",
     settings: {
       optimizer: {
         enabled: true,
